@@ -18,7 +18,6 @@
         network_security_group_id = azurerm_network_security_group.nsg_work_ic_arq.id
     }
 
-    
     resource "azurerm_linux_virtual_machine" "vm_work_ic_arq" {
         name                  = "vm_work_ic_arq"
         location              = azurerm_resource_group.rg_work_ic_arq.location
@@ -27,8 +26,8 @@
             azurerm_network_interface.nic_work_ic_arq.id
         ]
         size                  = "Standard_F2"
-        admin_username        = "fnascimento"
-        admin_password        = "Saad@0125"
+        admin_username        = var.vm_user
+        admin_password        = var.vm_password
 
         os_disk {
             name              = "vmWorkIcArqDisk"

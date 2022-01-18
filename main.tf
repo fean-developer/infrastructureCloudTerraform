@@ -1,4 +1,4 @@
-    # Provider
+    
     terraform  {
         required_providers {
             azurerm = {
@@ -9,8 +9,7 @@
     }
 
     provider "azurerm" {
-        features {
-        }
+        features {}
     }
 
     # Create a resource group in the azure
